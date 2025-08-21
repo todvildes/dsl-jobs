@@ -11,7 +11,7 @@ pipelineJob('job-dsl-plugin') {
       }
       steps {
                           dsl {
-                            external('jobs/**/*.groovy')
+                            external('jobs/*.groovy')
                             removeAction('DISABLE')
                             lookupStrategy('SEED_JOB')
                           }
