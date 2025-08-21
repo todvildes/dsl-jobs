@@ -9,6 +9,13 @@ pipelineJob('job-dsl-plugin') {
           branch('*/main')
         }
       }
+      steps {
+                          dsl {
+                            external('jobs/**/*.groovy')
+                            removeAction('DISABLE')
+                            lookupStrategy('SEED_JOB')
+                          }
+                        }
       lightweight()
     }
   }
